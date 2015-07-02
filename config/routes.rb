@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/delete'
-
-  get 'users/show'
 
   devise_for :users
   resources :users
