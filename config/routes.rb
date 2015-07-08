@@ -2,6 +2,17 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+
+  devise_scope :users do  
+    authenticated :user do
+      root to: "users#index", as: :authenticated_user, via: :get
+    end
+    
+    unauthenticated do
+      root to: "users#index"
+    end
+  
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,7 +21,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  #get 'signup' => 'signup#show'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
