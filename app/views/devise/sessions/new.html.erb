@@ -1,45 +1,37 @@
 <head>
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css.scss">
-  <link rel="stylesheet" href="assets/stylesheets/animate.css">
 </head>
 <body>
 
   
   
   <div class="logInForm">
-  <br><br>
-  <h1 class="animated fadeIn">CovertConvo</h1>
+  <br><br><br>
+  <img src ="https://cloud.githubusercontent.com/assets/8575252/8626957/9e7b3e52-2715-11e5-9e72-fd123bb90556.png" width="380px" height="120px" class="displayed">
   <h2 class="coolText">Log in</h2>
   
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     
       <div class="field">
-      <div class="coolText">
         <%= f.label :email %><br />
-      </div>
       <%= f.email_field :email, autofocus: true %>
     </div>
   
     <div class="field">
-      <div class="coolText">
         <%= f.label :password %><br />
-      </div>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
   
 
     <% if devise_mapping.rememberable? -%>
       <div class="field">
-        <div class= "coolText">
-        <%= f.check_box :remember_me %>
-        
-          <%= f.label :remember_me %>
-        </div>
+          <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
       </div>
     <% end -%>
   
     <br><div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in" , :class => 'btn' %>
     </div>
   <% end %>
   

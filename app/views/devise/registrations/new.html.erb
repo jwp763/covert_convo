@@ -1,5 +1,7 @@
 <div class="logInForm">
-<br><br><h2>Sign up</h2>
+<br><br><br>
+<img src ="https://cloud.githubusercontent.com/assets/8575252/8626957/9e7b3e52-2715-11e5-9e72-fd123bb90556.png" width="380px" height="120px" class="displayed">
+<h2 class="coolText">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -23,7 +25,7 @@
   </div>
   <br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'btn' %>
   </div>
 <% end %>
 <br>
