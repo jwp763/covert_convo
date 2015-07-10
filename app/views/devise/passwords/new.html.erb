@@ -1,7 +1,7 @@
 <div class="logInForm">
   <br><br><br>
   
-  <h2>Forgot your password?</h2>
+  <h2 class="coolText">Forgot your password?</h2>
   
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
@@ -11,8 +11,9 @@
       <%= f.email_field :email, autofocus: true %>
     </div>
     <br>
+    <h4>Send me reset password instructions!</h4>
     <div class="actions">
-      <%= f.submit "Send me reset password instructions" %>
+      <%= f.submit "click here to send" , :class => 'btn' %>
     </div>
   <% end %>
   <br>
