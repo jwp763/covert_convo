@@ -1,26 +1,48 @@
-<h2>Log in</h2>
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css.scss">
+  <link rel="stylesheet" href="assets/stylesheets/animate.css">
+</head>
+<body>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  
+  
+  <div class="logInForm">
+  <br><br>
+  <h1 class="animated fadeIn">CovertConvo</h1>
+  <h2 class="coolText">Log in</h2>
+  
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+      <div class="field">
+      <div class="coolText">
+        <%= f.label :email %><br />
+      </div>
+      <%= f.email_field :email, autofocus: true %>
     </div>
-  <% end -%>
+  
+    <div class="field">
+      <div class="coolText">
+        <%= f.label :password %><br />
+      </div>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <div class= "coolText">
+        <%= f.check_box :remember_me %>
+        
+          <%= f.label :remember_me %>
+        </div>
+      </div>
+    <% end -%>
+  
+    <br><div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+  
+  <br><%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
