@@ -32,7 +32,7 @@
           <li><a href="#">Convos</a></li>
           <li><a href="contacts.html.erb">Contacts</a></li>
           <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-        </ul>
+        </ul>000000000000
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         </ul>
@@ -46,11 +46,6 @@
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
-  
-      <%=yield %>
-  
-</div>
-
 
 
 
