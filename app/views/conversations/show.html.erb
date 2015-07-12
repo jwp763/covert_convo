@@ -7,7 +7,7 @@
         <% message = receipt.message %>
  
         <%= message.sender.name %>
-          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+          <br><%= current_user.name %> says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
         <%= message.body %>
       <% end %>
     </div>
