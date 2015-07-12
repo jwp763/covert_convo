@@ -60,3 +60,25 @@ IMG.displayed {
     margin-left:auto;
     margin-right:auto;
 }
+
+.navbar {
+    background-color: #B20000;
+    color: red;
+}
+
+.navbar .navbar-brand {
+    color: white;
+}
+
+.navbar .li {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: white;
+    color: #B20000;
+}
