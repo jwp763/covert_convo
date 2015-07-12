@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :users
+  resources :messages, only: [:new, :create]
 
   devise_scope :users do  
     authenticated :user do
