@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :messages, only: [:new, :create]
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :users
+  resources :messages, only: [:new, :create]
 
   devise_scope :users do  
     authenticated :user do
