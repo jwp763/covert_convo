@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url(http://fonts.googleapis.com/css?family=PT+Sans|Abril+Fatface|Roboto);
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -89,4 +89,26 @@ IMG.displayed {
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     background-color: white;
     color: #B20000;
+}
+
+#Swag {
+    background-color: #B20000;
+    position: fixed;
+    margin-right: 50%;
+    height: 230px;
+    width: 48%;
+    font-family: 'PT Sans', sans-serif;
+    padding: 10px;
+    font-size: 30px;
+}
+
+#Right {
+    background-color: #B20000;
+    position: fixed;
+    margin-left: 50%;
+    height: 230px;
+    width: 48%;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
 }
