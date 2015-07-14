@@ -38,5 +38,15 @@ class User < ActiveRecord::Base
     return self.email
   end
   
+  def random_interested_user
+    interested_users = []
+    self.interests.each do |interest|
+      #interest.each do |subinterest|
+        interested_users << interest.users
+      #end
+    end
+    index = rand(interested_users.length)
+    return User.second
+  end
   
 end

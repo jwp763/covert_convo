@@ -11,8 +11,8 @@
  
   <div class="form-group">
     <%= label_tag 'recipients', 'Choose recipients' %>
-    <%= select_tag 'recipients', recipients_options(false), multiple: true, class: 'form-control' %>
+    <%= select_tag 'recipients', recipients_options(true), multiple: true, class: 'form-control' %>
   </div>
  
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+  <%= submit_tag 'Start', class: 'btn btn-primary' %>
 <% end %>

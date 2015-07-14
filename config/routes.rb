@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'pages/convos'
+  get "messages/user_found"
 
   resources :interests
   resources :categories
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :users
-  resources :messages, only: [:new, :create]
+  resources :messages, only: [:new, :create, :user_found]
 
   devise_scope :users do  
     authenticated :user do
