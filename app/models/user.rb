@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
       #end
     end
     index = rand(interested_users.length)
-    return User.second
+    return interested_users[index]
   end
   
 end

@@ -4,5 +4,23 @@
 <ul class="list-group">
   <%= render partial: 'conversations/conversation', collection: @conversations %>
 </ul>
- 
+
+
+<% current_user.friends.each do |user| %>
+    <h3><%= link_to user.username, convo_create_path(user.id), method: :post %></h3>
+  <!--<button id="friend" onclick="$.ajax("/messages/create");"><% user.username %></button>-->
+<% end %> 
+
 <%= will_paginate %>
+
+
+<!--fixing this ajax call
+#fixing the message_helper
+#seed help
+#routing errors with messages/create
+start_conversation(<%  %>)
+
+try to push parameters to create function, routing error
+cannot ajax call to server
+how to go about seeding 
+-->
