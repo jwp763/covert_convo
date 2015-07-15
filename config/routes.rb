@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   
   devise_for :users
   resources :users
-  resources :messages, only: [:new, :create, :user_found]
-
+  resources :messages#, only: [:new, :create, :user_found] 
+  
+  post 'convo/:recipients', to: 'messages#create', as: "convo_create" 
+  
   devise_scope :users do  
     authenticated :user do
       root to: "users#index", as: :authenticated_user, via: :get

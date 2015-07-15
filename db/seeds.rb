@@ -7,3 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # rake db:seed
+
+categories = Category.create([{name: Music}])
+interests = Interest.create([{}])
