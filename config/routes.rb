@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'pages/convos'
   get "messages/user_found"
+  
 
   resources :interests
   resources :categories
