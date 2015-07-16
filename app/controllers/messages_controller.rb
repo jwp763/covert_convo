@@ -15,9 +15,10 @@ class MessagesController < ApplicationController
     if params[:recipients].to_i > 0
       recipients = User.find_by(id: params['recipients'])
       #conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
-      
     elsif params[:recipients].to_i == 0
-      recipients = User.random_interested_user
+      recipients = current_user.random_interested_user
+    elsif params[:recipients].to_i == -1
+      recipients = current_user.random_user
     end
     conversation = current_user.send_message(recipients, "#{current_user.username} has started a conversation!", "#{recipients.username}/#{current_user.username}").conversation
     current_user.mailbox.inbox.unshift(conversation)
