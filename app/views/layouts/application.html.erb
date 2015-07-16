@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Workspace</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -43,13 +46,14 @@
           <li class="active"><%=link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
           <li><% link_to "Home", users_path, :class => 'navbar-link'  %> </li>-->
           
-          <li><%= link_to "Home", users_path, :class => 'navbar-link'  %><span class="sr-only">(current)</span></li>
-          <li><%= link_to "Convos", pages_convos_path, :class => 'navbar-link'  %> </li>
-          <li><%= link_to "Contacts", conversations_path, :class => 'navbar-link'  %> </li>
-          <li><%= link_to 'Profile', edit_user_path(current_user), :class => 'navbar-link' %></li>
+          
+          <li class="<%= 'active' if current_page?(users_path)%>"><%= link_to "Home", users_path, :class => 'navbar-link'  %> </li>
+          <li class="<%= 'active' if current_page?(pages_convos_path)%>"><%= link_to "Convos", pages_convos_path, :class => 'navbar-link'  %> </li>
+          <li class="<%= 'active' if current_page?(conversations_path)%>"><%= link_to "Contacts", conversations_path, :class => 'navbar-link'  %> </li>
+          <li class="<%= 'active' if current_page?(edit_user_path(current_user))%>"><%= link_to 'Profile', edit_user_path(current_user), :class => 'navbar-link' %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "#{current_user.email}", edit_user_registration_path, :class => 'navbar-link'  %></li>
+          <li class="<%= 'active' if current_page?(edit_user_registration_path)%>"><%= link_to "#{current_user.email}", edit_user_registration_path, :class => 'navbar-link'  %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
