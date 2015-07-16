@@ -6,13 +6,11 @@
     <div class="messages">
       <% @conversation.receipts_for(current_user).each do |receipt| %>
         <% message = receipt.message %>
- 
-        
           <div class="row">
             <div class="col-xs-2 col-md-1"><%= current_user.email %></div>
             <div class="col-xs-1 col-md-1"></div>
-            <div class="col-xs-6 col-md-8"><%= message.body %></div>
-            <div class="col-xs-1 col-md-1"></div>
+            <div class="col-xs-6 col-md-7"><%= message.body %></div>
+            <div class="col-xs-1 col-md-2"></div>
             <div class="col-xs-2 col-md-1"><%= message.created_at.strftime("%H:%M") %></div>
           </div>
         <br>
