@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
       recipients = User.random_interested_user
     end
     conversation = current_user.send_message(recipients, "#{current_user.username} has started a conversation!", "#{recipients.username}/#{current_user.username}").conversation
+    current_user.mailbox.inbox.unshift(conversation)
     flash[:success] = "Message has been sent!"
     redirect_to conversation_path(conversation)
   end
