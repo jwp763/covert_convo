@@ -1,7 +1,8 @@
+    <h1>Welcome, <%= current_user.username %>!</h1>
+
 <div class="btn-group" role="group" aria-label="...">
     <!--<button id="Swag" type="button" class="btn btn-default" >Interest Search</button>
     <button id="Right" type="button" class="btn btn-default">Random Search</button>-->
-    
   <%= link_to "Interest Search", convo_create_path(0), method: :post, :class => 'left' %>
   <%= link_to "Random Search", convo_create_path(-1), method: :post, :class => 'right'%>
   
