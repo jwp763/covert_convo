@@ -67,7 +67,21 @@
     <button type="button" class="icon-mobile" aria-label="Left Align">
       <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
     </button>
-  
     </div>
+    
+    
+    
   </div>
+<<<<<<< HEAD
+=======
+  <div class="leftSide">
+    <button id="matched_user" type="button" class="icon-mobile" aria-label="Left Align">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      <%= link_to '', users_request_friendship_path(@match.id), method: :patch, remote: true %>
+    </button>
+    
+    <% # link_to '', users_request_friendship_path(@match.id), method: :patch, remote: true %>
+    
+  </div>
+>>>>>>> 5f9f1f51cdd0f110c1e4f3516b8458c733dde075
 </div>

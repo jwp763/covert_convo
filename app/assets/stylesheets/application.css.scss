@@ -16,12 +16,15 @@
  *= require_tree .
  *= require_self
  */
+h1 {
+    text-align: center;
+}
 
 body {
     color:black;
     padding:5px;
+background: url(https://cloud.githubusercontent.com/assets/12900938/8738215/c5d3f46a-2bf9-11e5-9027-a66aee4dc1b0.jpg);
 }
-
 .content {
     margin-left: 50px;
 }
@@ -132,6 +135,7 @@ IMG.displayed {
     line-height: 220px;
     white-space: nowrap;
 }
+
 
 .box {
     margin-left: 150px;
