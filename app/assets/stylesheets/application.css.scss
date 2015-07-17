@@ -162,13 +162,14 @@ IMG.displayed {
 .rightSide {
     width:115px;
     float:left;
-    margin-left:25px;
+    margin-left:75px;
     display: inline;
     position: relative;
 }
 
 .leftSide {
-    width:115px;
+    width:125px;
+    margin-left:40px;
     float: right;
     display: inline;
     position: relative;
@@ -186,19 +187,23 @@ IMG.displayed {
 	    width: 100%;
 	    padding: 5px;
 	} 
-#Scratch {
-    position: fixed;
-    margin-top: 40%;
-    margin-right: 100%;
-}
-#White {
-    position: fixed;
-    margin-top: 40%;
-    margin-left: 35%;
-}
-#Swag {
-    position: fixed;
-    margin-top: 40%;
-    margin-left: 70%;
-}
+	.displayed {
+	    width: 180px;
+	    height: 60px;
+	}
+    #Scratch {
+        position: fixed;
+        margin-top: 40%;
+        margin-right: 100%;
+    }
+    #White {
+        position: fixed;
+        margin-top: 40%;
+        margin-left: 35%;
+    }
+    #Swag {
+        position: fixed;
+        margin-top: 40%;
+        margin-left: 70%;
+    }
 }
