@@ -56,12 +56,8 @@ class User < ActiveRecord::Base
       end
     end
     index = rand(interested_users.length)
-    if(interested_users[index])
-      return interested_users[index]
-    else
-      #flash[:success] = "Error, no users found!"
-      redirect_to conversations_path(random: false)
-    end
+    return interested_users[index]
+    #flash[:success] = "Error, no users found!"
   end
   
   def random_user
@@ -79,12 +75,8 @@ class User < ActiveRecord::Base
       end
     end
     index = rand(random_users.length)
-    if(random_users[index])
-      return random_users[index]
-    else
-      #flash[:success] = "Error, no users found!"
-      redirect_to conversations_path(random: false)
-    end
+    return random_users[index]
+    #flash[:success] = "Error, no users found!
   end
   
 end

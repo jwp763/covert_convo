@@ -12,11 +12,39 @@
   <link rel="stylesheet" type="text/css" href="app/assets/javascripts/bootstrap.min.js">
   
   <script>
-    function start_conversation(){
-      //$.ajax("/messages/create");
-    
-      getElementById('friend').innerHTML = 'Hello';
+    var accept_friend=function(){
+      $.ajax({
+        type:'GET',
+        url:'/users_accept_friend_path',
+        data: { selectingCommand : document.getElementById("CommandSelect"); 
+              },
+        success:function(){
+          //I assume you want to do something on controller action execution success?
+          $(this).innerHTML("");
+        }
+      });
     }
+    
+    <% if user_signed_in? %>
+      <% current_user.potential_friends.each do |user| %>
+        $(document).on("click","#friend<%= user.id %>", accept_friend);
+      <% end %>
+    <% end %>
+    
+    var request_friend=function(){
+      $.ajax({
+        type:'GET',
+        url:'/users_request_friend_path',
+        data: { selectingCommand : document.getElementById("CommandSelect"); 
+              },
+        success:function(){
+          //I assume you want to do something on controller action execution success?
+          $(this).innerHTML("Sent");
+        }
+      });
+    }
+    
+    $(document).on("click","#matched_user", request_friend);
   </script>
 </head>
 <body>
@@ -34,7 +62,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "CovertConvo", users_path, :class => 'navbar-brand'  %>
+        <%= link_to "CovertConvo", pages_convos_path, :class => 'navbar-brand'  %>
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,16 +72,16 @@
           <li><a href="#">Convos</a></li>
           <li><a href="contacts.html.erb">Contacts</a></li>
           <li class="active"><%=link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
-          <li><% link_to "Home", users_path, :class => 'navbar-link'  %> </li>-->
+          <li><% link_to "Home", pages_convos_path, :class => 'navbar-link'  %> </li>-->
           
           
-          <li class="<%= 'active' if current_page?(users_path)%>"><%= link_to "Home", users_path, :class => 'navbar-link'  %> </li>
-          <li class="<%= 'active' if current_page?(pages_convos_path)%>"><%= link_to "Convos", pages_convos_path, :class => 'navbar-link'  %> </li>
+          <li class="<%= 'active' if current_page?(pages_convos_path)%>"><%= link_to "Home", pages_convos_path, :class => 'navbar-link'  %> </li>
           <li class="<%= 'active' if current_page?(conversations_path)%>"><%= link_to "Contacts", conversations_path, :class => 'navbar-link'  %> </li>
+          <li class="<%= 'active' if current_page?(pages_notifications_path)%>"><%= link_to "Notifications", pages_notifications_path, :class => 'navbar-link'  %> </li>
           <li class="<%= 'active' if current_page?(edit_user_path(current_user))%>"><%= link_to 'Profile', edit_user_path(current_user), :class => 'navbar-link' %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="<%= 'active' if current_page?(edit_user_registration_path)%>"><%= link_to "#{current_user.email}", edit_user_registration_path, :class => 'navbar-link'  %></li>
+          <li class="<%= 'active' if current_page?(edit_user_registration_path)%>"><%= link_to "#{current_user.username}", edit_user_registration_path, :class => 'navbar-link'  %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         </ul>
       </div><!-- /.navbar-collapse -->

@@ -21,12 +21,20 @@ class MessagesController < ApplicationController
       redirect_to conversation_path(conversation)
     elsif params[:recipients].to_i == 0
       recipients = current_user.random_interested_user
+      if recipients == nil
+        redirect_to conversations_path()
+        return
+      end
       conversation = current_user.send_message(recipients, "#{current_user.username} has started a conversation!", "#{recipients.username}/#{current_user.username}").conversation
       current_user.mailbox.inbox.unshift(conversation)
       flash[:success] = "Message has been sent!"
       redirect_to conversation_path(id: conversation.id, random: true)
     elsif params[:recipients].to_i == -1
       recipients = current_user.random_user
+      if recipients == nil
+        redirect_to conversations_path()
+        return
+      end
       conversation = current_user.send_message(recipients, "#{current_user.username} has started a conversation!", "#{recipients.username}/#{current_user.username}").conversation
       current_user.mailbox.inbox.unshift(conversation)
       flash[:success] = "Message has been sent!"
