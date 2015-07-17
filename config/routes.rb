@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   get 'pages/convos'
-  get "messages/user_found"
-  
+  get 'pages/notifications'
 
   resources :interests
   resources :categories
@@ -18,9 +17,12 @@ Rails.application.routes.draw do
   
   post 'convo/:recipients', to: 'messages#create', as: "convo_create" 
   
+  patch "/users/accept_friendship/:id" => "users#accept_friend", as: :users_accept_friendship
+  patch "/users/request_friendship/:id" => "users#request_friend", as: :users_request_friendship
+  
   devise_scope :users do  
     authenticated :user do
-      root to: "users#index", as: :authenticated_user, via: :get
+      root to: "pages#convos", as: :authenticated_user, via: :get
     end
     
     unauthenticated do
