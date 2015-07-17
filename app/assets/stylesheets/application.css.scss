@@ -51,6 +51,20 @@ IMG.displayed {
     margin-right: auto 
 }
     
+.mybutton {
+    background-color:#B20000;
+    color:white;
+    border-radius:0px;
+    display: block;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 15px;
+    border: 0px solid black;
+}
+
 .btn {
     background-color:#B20000;
     color:white;
@@ -119,4 +133,50 @@ IMG.displayed {
     text-align: center;
     line-height: 220px;
     white-space: nowrap;
+}
+
+.box {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.icon-mobile {
+    height: 50px;
+    width: 50px;
+    background-color:white;
+    border: 0px solid white;
+    font-size: 30px;
+}
+
+.rightSide {
+    width:115px;
+    float:left;
+    margin-left:25px;
+    display: inline;
+    position: relative;
+}
+
+.leftSide {
+    width:115px;
+    float: right;
+    display: inline;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+	.box{
+        margin-left:40px;
+        margin-right:40px;
+	}
+	.nav-toggle{
+       display : block; // or inline-block or inline : which ever is appropriate for you.
+	}
+	.mybutton {
+	    width: 100%;
+	    padding: 5px;
+	} 
 }
