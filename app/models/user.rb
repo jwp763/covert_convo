@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
       return interested_users[index]
     else
       #flash[:success] = "Error, no users found!"
-      redirect_to conversations_path()
+      redirect_to conversations_path(random: false)
     end
   end
   
@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
       return random_users[index]
     else
       #flash[:success] = "Error, no users found!"
-      redirect_to conversations_path()
+      redirect_to conversations_path(random: false)
     end
   end
   

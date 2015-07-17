@@ -27,7 +27,6 @@
       <div class="messages">
         <% @conversation.receipts_for(current_user).each do |receipt| %>
           <% message = receipt.message %>
-           <%= @random %>
           
             <div class="row">
               <div class="col-xs-2 col-md-1"><%= current_user.email %></div>
