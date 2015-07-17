@@ -1,4 +1,3 @@
-
 <h1>You have 
 <%= 
     if current_user.potential_friends.length > 0
@@ -8,6 +7,15 @@
     end
 %>
 notifications.</h1>
-<% current_user.potential_friends.each do |user| %>
+
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Friend Requests</button>
+  <% current_user.potential_friends.each do |user| %>
     <%= link_to "friend#{user.id}", users_accept_friendship_path(user.id), method: :patch, remote: true %>
 <% end %>
+  <br>
+  <br>
+  <br>
+  <button type="button" class="btn btn-default">Messages</button>
+</div>
+
