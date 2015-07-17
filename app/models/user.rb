@@ -64,8 +64,11 @@ class User < ActiveRecord::Base
     random_users = []
     User.all.each do |user|
       isFriend = false
+      if user.id == self.id
+          isFriend = true
+        end
       self.friends.each do |friend|
-        if user.id == friend.id || user.id == self.id
+        if user.id == friend.id
           isFriend = true
           break
         end
