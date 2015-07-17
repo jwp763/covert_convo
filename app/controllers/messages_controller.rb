@@ -35,8 +35,4 @@ class MessagesController < ApplicationController
     
     
   end
-  
-  def user_found
-    
-  end
 end
