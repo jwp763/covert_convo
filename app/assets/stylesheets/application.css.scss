@@ -91,7 +91,7 @@ IMG.displayed {
     color: #B20000;
 }
 
-#Swag {
+.left {
     background-color: #B20000;
     position: fixed;
     margin-right: 50%;
@@ -100,9 +100,13 @@ IMG.displayed {
     font-family: 'PT Sans', sans-serif;
     padding: 10px;
     font-size: 30px;
+    color:white;
+    text-align: center;
+    line-height: 220px;
+    white-space: nowrap;
 }
 
-#Right {
+.right {
     background-color: #B20000;
     position: fixed;
     margin-left: 50%;
@@ -111,4 +115,8 @@ IMG.displayed {
     padding: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 30px;
+    color:white;
+    text-align: center;
+    line-height: 220px;
+    white-space: nowrap;
 }

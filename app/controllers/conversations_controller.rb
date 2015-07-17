@@ -27,6 +27,7 @@ class ConversationsController < ApplicationController
   
   def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
+    @random = params[:random]
   end
   
   
