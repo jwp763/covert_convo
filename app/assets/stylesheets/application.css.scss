@@ -107,7 +107,6 @@ IMG.displayed {
 
 .left {
     background-color: #B20000;
-    position: fixed;
     margin-right: 50%;
     height: 230px;
     width: 48%;
@@ -122,7 +121,6 @@ IMG.displayed {
 
 .right {
     background-color: #B20000;
-    position: fixed;
     margin-left: 50%;
     height: 230px;
     width: 48%;
@@ -147,26 +145,27 @@ IMG.displayed {
 .icon-mobile {
     height: 50px;
     width: 50px;
-    background-color:white;
     border: 0px solid white;
     font-size: 30px;
+    background:rgba(0,0,0,0.5);
+
 }
 
 .rightSide {
     width:115px;
     float:left;
     margin-left:25px;
-    display: inline;
-    position: relative;
 }
 
 .leftSide {
     width:115px;
     float: right;
-    display: inline;
-    position: relative;
 }
 
+
+
+
+//mobile CSS (for phones and tablets)
 @media (max-width: 767px) {
 	.box{
         margin-left:40px;
@@ -179,4 +178,10 @@ IMG.displayed {
 	    width: 100%;
 	    padding: 5px;
 	} 
+	.rightSide {
+	    display:none;
+	}
+	.leftSide{
+	    display:none;
+	}
 }
