@@ -29,4 +29,18 @@ class UsersController < ApplicationController
       current_user.accept_friendship(@friend)
     end
   end
+  
+  def request_friend
+    @friend = User.find(params[:id])
+    isAlreadyFriend = false
+    current_user.friends.each do |user|
+      if(@friend.id != user.id)
+        isAlreadyFriend = true
+        break
+      end
+    end
+    if(isAlreadyFriend != true)
+      current_user.request_friendship(@friend)
+    end
+  end
 end
